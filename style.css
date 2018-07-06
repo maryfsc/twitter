@@ -56,15 +56,54 @@ header {
   color: #657786;
 }
 
+.profile h3 {
+  position: absolute;
+  top: 220px;
+}
+
+.profile p {
+  position: relative;
+  top: 195px;
+}
+
 .avatar {
   border: 1px solid transparent;
   border-radius: 50%;
   height: 150px; 
   width: 150px;
   margin-top: 12px;
+  position: absolute;
 }
 
 .text {
+  display: flex;
+  justify-content: center;
   width: 600px;
   height: 300px;
+}
+
+form {
+  padding-top: 25px;
+  padding-left: 13px;
+}
+
+form textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  resize: none;
+  width: 555px;
+  height: 200px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #1B95E0 !important;
+  background-color: #FFFFFF;
+  font-size: 20px;
+}
+
+#tweet-button {
+  background-color: #1B95E0;
+  border: hidden;
+  padding: 8px 21px;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 700;
 }
