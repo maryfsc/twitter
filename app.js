@@ -1,14 +1,47 @@
 var tweetButton = document.getElementById('tweet-button');
+var textArea = document.getElementById('tweet-text');
+var counterNumber = document.getElementById('counter-number');
+var tweetLimit = 140;
+
+textArea.addEventListener('input', disableButton);
+textArea.addEventListener('input', charCounter);
 tweetButton.addEventListener('click', sendTweet);
 
-function sendTweet() {
-  
-  var tweetText = document.getElementById('tweet-text');  
-  var newTweet = document.createElement('p'); 
-  
-  newTweet.textContent = tweetText.value;
+function disableButton() {
+  if (textArea.value.length === 0 || textArea.value.length > 140 || textArea.value === '') {
+    tweetButton.disabled = true;
+  } else {
+    tweetButton.disabled = false;
+  }
+}
 
+function charCounter() {
+
+  var autoCounter = tweetLimit - textArea.value.length;
+  counterNumber.textContent = autoCounter;
+
+  counterNumber.style = "color: black;";
+
+  if (textArea.value.length > 120) {
+    counterNumber.style = "color: yellow;";
+  } 
+
+  if (textArea.value.length > 130) {
+    counterNumber.style = "color: orange;";
+  } 
+
+  if (textArea.value.length >= 140) {
+    counterNumber.style = "color: red;";
+  }
+}
+
+function sendTweet() {
+  var tweetText = document.getElementById('tweet-text');  
+  var newTweet = document.createElement('p');
+
+  newTweet.textContent = tweetText.value;
   var tweetContainer = document.createElement('div');
+
   tweetContainer.classList = 'tweet';
   tweetContainer.appendChild(newTweet);
 
@@ -18,30 +51,3 @@ function sendTweet() {
 
 }
 
-
-// textArea.addEventListener('input', counter);
-
-// textArea.addEventListener('input', disableButton);
-
-// function disableButton() {
-//   if (textArea.textContent === '') {
-//     // tweetButton.classList.add('disable');
-//     tweetButton.setAttribute('disabled', 'disabled');
-//   }
-// }
-
-var textArea = document.getElementById('tweet-text');
-var counter = document.getElementById('char-counter-container');
-var counterNumber = document.getElementById('counter-number');
-
-textArea.addEventListener('keydown', charCounter);
-
-
-function charCounter() {
-  debugger
-    var autoCounter = 280 - textArea.value.length;
-    var counterContainer = document.createElement('p');
-    counterContainer.value = autoCounter;
-    counter.replaceChild(counterContainer, counterNumber);
-
-}
