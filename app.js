@@ -14,6 +14,34 @@ function sendTweet() {
 
   document.getElementById('timeline').appendChild(tweetContainer);
 
-  tweetText.value = "";
+  tweetText.value = '';
+
+}
+
+
+// textArea.addEventListener('input', counter);
+
+// textArea.addEventListener('input', disableButton);
+
+// function disableButton() {
+//   if (textArea.textContent === '') {
+//     // tweetButton.classList.add('disable');
+//     tweetButton.setAttribute('disabled', 'disabled');
+//   }
+// }
+
+var textArea = document.getElementById('tweet-text');
+var counter = document.getElementById('char-counter-container');
+var counterNumber = document.getElementById('counter-number');
+
+textArea.addEventListener('keydown', charCounter);
+
+
+function charCounter() {
+  debugger
+    var autoCounter = 280 - textArea.value.length;
+    var counterContainer = document.createElement('p');
+    counterContainer.value = autoCounter;
+    counter.replaceChild(counterContainer, counterNumber);
 
 }

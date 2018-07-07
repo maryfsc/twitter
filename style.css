@@ -78,6 +78,7 @@ header {
 .text {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   width: 600px;
   height: 300px;
 }
@@ -99,6 +100,13 @@ form textarea {
   font-size: 20px;
 }
 
+.char-counter-container {
+  position: relative;
+  bottom: 50px;
+  left: 250px;
+  font-size: 20px;
+}
+
 #tweet-button {
   background-color: #1B95E0;
   border: hidden;
@@ -106,6 +114,15 @@ form textarea {
   color: #FFFFFF;
   font-size: 15px;
   font-weight: 700;
+}
+
+.disabled {
+  background-color: gray;
+  border: hidden;
+  padding: 8px 21px;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 700;  
 }
 
 #timeline {
