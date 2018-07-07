@@ -13,9 +13,6 @@
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0 auto;
-  /*background-image: url(bg-twt.png);
-  background-size: 40%;
-  background-repeat: no-repeat;*/
   background-color: #1DA1F2;
 }
 
@@ -47,12 +44,25 @@ header {
   margin: 5px;
 }
 
+.text {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 600px;
+  height: 100%;
+}
+
+.animation {
+  height: 100%;
+  transition: height 0.5s;
+}
+
 .profile {
   display: flex;
   justify-content: center;
   text-align: center;
   width: 300px;
-  height: 300px;
+  height: 250px;
   color: #657786;
 }
 
@@ -75,14 +85,6 @@ header {
   position: absolute;
 }
 
-.text {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 600px;
-  height: 300px;
-}
-
 form {
   padding-top: 25px;
   padding-left: 13px;
@@ -92,7 +94,7 @@ form textarea {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   resize: none;
   width: 555px;
-  height: 200px;
+  height: auto;
   margin-bottom: 20px;
   border: none;
   border-bottom: 1px solid #1B95E0 !important;
@@ -131,6 +133,13 @@ form textarea {
   align-items: center;
   flex-direction: column;
   width: 100%;
+}
+
+.tweet p {
+  padding-left: 8px;
+  width: 100%;
+  padding-right: 8px;
+  padding-bottom: 25px;
 }
 
 .tweet {

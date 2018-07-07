@@ -1,10 +1,12 @@
 var tweetButton = document.getElementById('tweet-button');
 var textArea = document.getElementById('tweet-text');
 var counterNumber = document.getElementById('counter-number');
+var textBox = document.getElementById('box-text');
 var tweetLimit = 140;
 
 textArea.addEventListener('input', disableButton);
 textArea.addEventListener('input', charCounter);
+textArea.addEventListener('input', expandBox);
 tweetButton.addEventListener('click', sendTweet);
 
 function disableButton() {
@@ -16,7 +18,6 @@ function disableButton() {
 }
 
 function charCounter() {
-
   var autoCounter = tweetLimit - textArea.value.length;
   counterNumber.textContent = autoCounter;
 
@@ -51,3 +52,9 @@ function sendTweet() {
 
 }
 
+function expandBox() {
+  if (textArea.value.length > 85) {
+    textArea.classList.add('animation');
+    textBox.classList.add('animation');
+  } 
+}

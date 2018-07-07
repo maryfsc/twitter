@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <link href="https://file.myfontastic.com/VkDsUaoCzJ7rFCAmHgVQce/icons.css" rel="stylesheet">
-  <title>Twitter. It's what's happening.</title>
-</head>
-<body>
-  <header>
-    <i class="icon-twitter"></i>
-  </header>
-  <section class="box-container">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://file.myfontastic.com/VkDsUaoCzJ7rFCAmHgVQce/icons.css" rel="stylesheet">
+    <title>Twitter. It's what's happening.</title>
+  </head>
+  <body>
+    <header>
+      <i class="icon-twitter"></i>
+    </header>
+    <section class="box-container">
     <section class="box profile">
       <img class="avatar" src="new-user.png">
       <h3>@newUser</h3>
       <p>Tell your followers a bit about yourself!</p>
     </section>
-    <section class="box text">
+    <section id="box-text" class="box text">
       <form>
         <textarea id="tweet-text" type="text" placeholder="What's happening?">
         </textarea>
         <button type="button" id="tweet-button">Tweet</button>
-      </form>
-      <div class="char-counter-container"><p id="counter-number">140</p>
-      </div>
+        </form>
+        <div class="char-counter-container">
+        <p id="counter-number">140</p>
+        </div>
+      </section>
     </section>
-  </section>
-  <section id="timeline">
-  </section>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script type="text/javascript" src="app.js"></script>
-</body>
+    <section id="timeline">
+    </section>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="moment-with-locales.js"></script>
+  </body>
 </html>
