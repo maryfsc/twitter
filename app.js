@@ -1,7 +1,6 @@
 var tweetButton = document.getElementById('tweet-button');
 var textArea = document.getElementById('tweet-text');
 var counterNumber = document.getElementById('counter-number');
-var textBox = document.getElementById('box-text');
 var tweetLimit = 140;
 
 textArea.addEventListener('input', disableButton);
