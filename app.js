@@ -9,10 +9,15 @@ textArea.addEventListener('input', charCounter);
 textArea.addEventListener('input', expandBox);
 tweetButton.addEventListener('click', sendTweet);
 
+tweetButton.disabled = true;
+tweetButton.classList = 'disabled-button';
+
 function disableButton() {
-  if (textArea.value.length === 0 || textArea.value.length > 140 || textArea.value === '') {
+  if (textArea.value.length === 0 || textArea.value.length > 140 || textArea.value.trim() === '') {
     tweetButton.disabled = true;
+    tweetButton.classList = 'disabled-button';
   } else {
+    tweetButton.classList = 'tweet-button';
     tweetButton.disabled = false;
   }
 }
@@ -39,22 +44,26 @@ function charCounter() {
 function sendTweet() {
   var tweetText = document.getElementById('tweet-text');  
   var newTweet = document.createElement('p');
+  var tweetTime = document.createElement('p');
 
   newTweet.textContent = tweetText.value;
+  moment.locale('pt-br');
+  tweetTime.innerHTML = moment().format('LT');
+  
   var tweetContainer = document.createElement('div');
 
   tweetContainer.classList = 'tweet';
   tweetContainer.appendChild(newTweet);
+  tweetContainer.appendChild(tweetTime);
 
   document.getElementById('timeline').appendChild(tweetContainer);
 
   tweetText.value = '';
-
+  charCounter();
 }
 
 function expandBox() {
-  if (textArea.value.length > 85) {
-    textArea.classList.add('animation');
-    textBox.classList.add('animation');
-  } 
+ if (textArea.scrollHeight > textArea.offsetHeight) {
+   textArea.rows += 1;
+ }
 }

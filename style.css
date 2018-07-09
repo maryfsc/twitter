@@ -52,11 +52,6 @@ header {
   height: 100%;
 }
 
-.animation {
-  height: 100%;
-  transition: height 0.5s;
-}
-
 .profile {
   display: flex;
   justify-content: center;
@@ -66,14 +61,16 @@ header {
   color: #657786;
 }
 
-.profile h3 {
-  position: absolute;
-  top: 220px;
+.user {
+  position: relative;
+  top: 150px;
+  left: 95px;
 }
 
-.profile p {
+.bio {
   position: relative;
-  top: 195px;
+  top: 182px;
+  left: -43px;
 }
 
 .avatar {
@@ -109,7 +106,7 @@ form textarea {
   font-size: 20px;
 }
 
-#tweet-button {
+.tweet-button {
   background-color: #1B95E0;
   border: hidden;
   padding: 8px 21px;
@@ -118,7 +115,7 @@ form textarea {
   font-weight: 700;
 }
 
-.disabled {
+.disabled-button {
   background-color: gray;
   border: hidden;
   padding: 8px 21px;
@@ -136,10 +133,9 @@ form textarea {
 }
 
 .tweet p {
-  padding-left: 8px;
+  padding-left: 15px;
   width: 100%;
   padding-right: 8px;
-  padding-bottom: 25px;
 }
 
 .tweet {
