@@ -59,10 +59,11 @@ function sendTweet() {
 
   tweetText.value = '';
   charCounter();
+  disableButton();
 }
 
 function expandBox() {
  if (textArea.scrollHeight > textArea.offsetHeight) {
-   textArea.rows += 1;
+  textArea.rows += 1;
  }
 }
